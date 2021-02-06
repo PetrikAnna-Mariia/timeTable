@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+   
+    <style>
+      h1{
+        display: inline-block;
+      }
+      select{
+        display: inline-block;
+        
+      }
+      button{
+        display: inline-block;
+        
+      }
+      table{
+        border-collapse: collapse;
+      }
+      th{
+        border: 1px solid lightgray;
+        width: 120px;
+        height: 40px;
+      }
+      td{
+        background-color:  cornsilk;
+        border: 1px solid lightgray;
+        padding: 10px;
+        text-align:center;
+      }
+      
+      #head{
+        margin-bottom: 20px;
+      }
+      #form{
+        border: 1px double black;
+        display: none;
+        position: absolute;
+        background-color: antiquewhite;
+        z-index: 1;
+        padding: 10px;
+      }
+      #container{
+        position: absolute;
+        z-index: 0;
+      }
+      #message{
+        position:absolute;
+        border: 1px solid lightgray;
+        background-color: antiquewhite;
+        color: red;
+        z-index: 1;
+      }
+      input{
+        margin: 5px;
+      }
+      select{
+        margin: 5px;
+      }
+      #littleButton{
+        margin-left: 10px;
+        background-color: #00FA9A;
+        border: none;
+        display: inline-block;
+        text-align:  right ;
+      }
+  </style>
+</head>
+
+<body>
+
+  <div id="form">
+      <label>Name of the event:</label>
+      <input type="text" id="name" required>
+      <br>
+      <lable >Participants:</lable>
+      <select id="Participants" required multiple></select>
+      <br>
+      <button id="addNewParty">Add new Participant</button>
+      <input type="text" id="newParty">
+      <br>
+      <lable>Day:</lable>
+      <select id="day"required ></select>
+      <br>
+      <lable>Time:</lable>
+      <select id="time" required></select>
+      <br>
+      <button type="submit" value="Cancel" id="Cancel">Cancel</button>
+      <button type="submit" value="Create" id="Create">Create</button>
+  </div>
+
+  <script src='timeTable.js'></script>
+  </body>
+</html>
