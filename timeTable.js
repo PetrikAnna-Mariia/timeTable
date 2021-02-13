@@ -123,6 +123,7 @@ function decorated(cell, objForm) {
 function newMap(currentMonday) {
     let map = new Map();
     map.set("monday", stringData(currentMonday));
+    console.log(currentMonday)
     eventArr.push(map);
     return map;
 };
@@ -150,6 +151,7 @@ function createTable(startDate) {
             if (index == 0) {
                 if (value == "Name") {
                     createTag(tr, 'th', "", value).setAttribute("currentDay", stringData(startMonday));
+                    console.log(currentMonday)
                 } else {
                     createTag(tr, 'th', "", value + startMonday.getDate());
                     startMonday.setDate(startMonday.getDate() + 1);
@@ -180,7 +182,7 @@ function getCurrentMonday() {
 
 function reRenderTable() {
     let map;
-    renameHeaders();
+    renameHeaders(currentMonday);
     arrTd.forEach(item => {
         if (item.innerHTML) {
             item.innerHTML = "";
@@ -189,6 +191,7 @@ function reRenderTable() {
     });
     eventArr.forEach((item, index) => {
         if (item.get("monday") == stringData(currentMonday)) {
+            console.log(currentMonday)
             map = item;
             indexCurentMonday = index;
             item.forEach((value, key) => {
@@ -218,6 +221,7 @@ function renameHeaders(currentMonday) {
     getArrTh().forEach((item, index) => {
         if (index == 0) {
             item.setAttribute('currentDay', stringData(currentMonday));
+            console.log(currentMonday)
         } else {
             let days = item.innerHTML.split(" ");
             item.innerHTML = days[0] + " " + data.getDate();
@@ -228,6 +232,7 @@ function renameHeaders(currentMonday) {
 
 function nextWeek() {
     currentMonday = new Date(currentMonday.getFullYear(), currentMonday.getMonth(), currentMonday.getDate() + 7);
+    console.log(currentMonday);
     reRenderTable();
 };
 
@@ -238,6 +243,7 @@ function previousWeek() {
 
 function stringData(date) {
     return "" + date.getFullYear() + " " + date.getMonth() + " " + date.getDate();
+    console.log(date);
 }
 
 function setPosition(elem) {
