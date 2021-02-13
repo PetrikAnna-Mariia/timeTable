@@ -32,7 +32,6 @@ function createContainer() {
     createTag(head, "button", "", "New event +").addEventListener("click", showForm);
     createTag(head, "button", "", "< Previous week").addEventListener('click', previousWeek);
     createTag(head, "button", "", "Next week >").addEventListener('click', nextWeek);
-    createTag(head, "button", "", "This week").addEventListener('click', returnThisWeek)
     createTable(startDate);
 };
 
